@@ -1,0 +1,34 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui">
+    <h:head>
+        <title>Facelet Title</title>
+    </h:head>
+    <h:body>
+        <h:form id="addPerson" prependId="false">
+            <p:panelGrid>
+                <p:row>
+                    <p:column><p:outputLabel value="Name"/></p:column>
+                    <p:column><p:inputText id="addName" placeholder="Enter name" value="#{personController.name}"/></p:column>
+                    <p:column rowspan="2"><p:commandButton value="add" update="@form" ajax="false" action="#{personController.addPerson()}"></p:commandButton></p:column>    
+                </p:row>
+                <p:row>
+                    <p:column><p:outputLabel value="Surname"/></p:column>
+                    <p:column><p:inputText id="addSurname" placeholder="Enter Surname" value="#{personController.surname}"/></p:column>
+                </p:row>
+                <p:row>
+                    <p:column><p:outputLabel value="City"/></p:column>
+                    <p:column><p:inputText id="addCity" placeholder="Enter City" value="#{personController.city}"/></p:column>
+                    <p:column rowspan="2"><p:commandButton value="back" update="@form" ajax="false" action="#{menuView.personControl(0)}"></p:commandButton></p:column>  
+                </p:row>
+                <p:row>
+                    <p:column><p:outputLabel value="Street"/></p:column>
+                    <p:column><p:inputText id="addStreet" placeholder="Enter Street" value="#{personController.street}"/></p:column>
+                </p:row>
+            </p:panelGrid>
+        </h:form>
+    </h:body>
+</html>
+

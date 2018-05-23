@@ -1,0 +1,26 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui">
+    <h:head>
+        <title>Menu</title>
+    </h:head>
+    <h:body>
+        <h:form id="menu_form" prependId="false">
+            <p:panelMenu >
+                <p:submenu label="Person">
+                    <p:menuitem value="Add" update="@form" ajax="false" action="#{menuView.personControl(1)}"/>
+                </p:submenu>
+                <p:submenu label="Car">
+                    <p:menuitem value="Add" update="@form" ajax="false" action="#{menuView.carControl(1)}"/>
+                    <p:menuitem value="Assign to person" update="@form" ajax="false" action="#{menuView.carControl(2)}"/>
+                </p:submenu>
+                <p:submenu label="Additional options">
+                    <p:menuitem value="Upload new image" update="@form" ajax="false" action="#{menuView.additionalControl(1)}"/>
+                </p:submenu>
+            </p:panelMenu>
+        </h:form>
+    </h:body>
+</html>
+
